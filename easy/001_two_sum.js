@@ -31,3 +31,18 @@ var twoSum = function(nums, target) {
     }
     return result
 };
+
+/*
+Runtime: 128 ms, faster than 41.27% of JavaScript.
+Memory Usage: 34.7 MB, less than 56.74% of JavaScript.
+*/
+var twoSum2 = function(nums, target) {
+    for (i=0; i<nums.length; i++) {
+        otherPart = target - nums[i];
+        otherPartIdx = nums.indexOf(otherPart, i+1);
+        if (otherPartIdx != -1) {     
+            return [i, otherPartIdx];
+        }
+    }
+    return []
+};
