@@ -58,3 +58,25 @@ var mySqrt2 = function(x) {
     
     return res;
 };
+
+/*
+A Newton's method
+https://en.wikipedia.org/wiki/Newton%27s_method
+
+Finding successively better approximations to the roots:
+newguess=(1/2)∗(oldguess+(n/oldguess))
+
+Runtime: 84 ms, faster than 74.30% of JavaScript.
+Memory Usage: 36 MB, less than 12.50% of JavaScript.
+*/
+var mySqrt = function(x) {
+    if (x === 0) {
+        return 0
+    }
+    
+    root = x/2   // init suggestion
+    for (let i = 0; i < 20; i++) {
+        root = (1/2)*(root + (x / root))
+    }
+    return parseInt(root, 10)
+};
